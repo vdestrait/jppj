@@ -1,1 +1,1 @@
-# jppj
+jppj-theme
