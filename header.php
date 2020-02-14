@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Carme" />
+    <!-- <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
     
     <?php wp_head() ?>
@@ -31,7 +33,7 @@
                     <video controls src="<?php the_field('video'); ?>"></video>
                     <img class="close-video" src="<?php bloginfo('template_url');?>/assets/img/close.png">
                 </figure>
-                <div class="video-player">
+                <div class="video-player" data-toggle="tooltip" data-placement="right" title="Lancer la video">
                     <img src="<?php bloginfo('template_url');?>/assets/img/white-filled-play.png" alt="">
                 </div>
             

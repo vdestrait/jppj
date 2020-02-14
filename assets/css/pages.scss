@@ -42,6 +42,7 @@ FRONT-PAGE
     bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
+    cursor: pointer;
     img {
         height: 60px;
         width: auto;
@@ -85,10 +86,11 @@ FRONT-PAGE
         .site-title {
             position: absolute;
             top: 50%;
-            left: 10%;
+            left: 15%;
+            transform: translateX(-50%);
             transform: translateY(-50%);
             .custom-logo {
-                max-height: 400px;
+                max-height: 250px;
                 width: auto;
             }
         }
@@ -124,6 +126,18 @@ FRONT-PAGE
                 cursor: pointer;
             }
         }
+        @include md-up {
+            .site-title {
+                position: absolute;
+                top: 50%;
+                left: 10%;
+                transform: translateY(-50%);
+                .custom-logo {
+                    max-height: 400px;
+                    width: auto;
+                }
+            }
+        }
     }
     section {
         padding: 3rem;
@@ -154,6 +168,8 @@ FRONT-PAGE
                 img.attachment-post-thumbnail {
                     width: 100%;
                     height: auto;
+                    max-height: 180px;
+                    object-fit: cover;
                 }
                 .modal-footer {
                     justify-content: flex-start;
@@ -213,4 +229,17 @@ FRONT-PAGE
     background-position: center;
     background-repeat: no-repeat;
     height: 100%;
+    width: 100%;
+    transition: all .2s ease-in-out;
+}
+
+.bcg-wrap {
+    height: 100%;
+    overflow: hidden;
+    min-height: 165px;
+    margin-bottom: 2rem;
+}
+
+.bcg-wrap:hover .bcg-img {
+    transform: scale(1.2);
 }

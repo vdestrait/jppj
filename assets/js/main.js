@@ -1,6 +1,9 @@
 
 
 $(document).ready(function() {
+	// Animations
+	$('.custom-logo').addClass('animated tada');
+
 	// Video
 	$('.video-player').on('click', function(){
 		$('.video').fadeIn();
@@ -22,6 +25,7 @@ $(document).ready(function() {
 		$('video').get(0).pause();
 	}
 
+	// Cards
 	$(".icon-wrap").hover(
 		function(){$(this).next().fadeIn('fast');},
 		function(){$(this).next().hide();}
@@ -32,6 +36,8 @@ $(document).ready(function() {
 		function(){$(this).hide();}
 	);
 
+
+	// Tooltip
 	$(function () {
 	  $('[data-toggle="tooltip"]').tooltip()
 	})

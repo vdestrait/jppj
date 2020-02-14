@@ -14,9 +14,13 @@ h3,h4 {
 }
 
 h1 {
-	font-size: 4rem;
+	font-size: 3rem;
 	text-align: center;
-	margin: 4rem;
+	margin: 4rem 1rem;
+	@include md-up {
+		font-size: 4rem;
+		margin: 4rem;
+	}
 }
 
 h2 {

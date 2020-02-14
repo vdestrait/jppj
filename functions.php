@@ -1,7 +1,7 @@
 <?php
 
 add_action('after_setup_theme', function() {
-    // Customize
+    // Customize Appearance Options
     add_theme_support('custom-logo', [
         'height' => 400,
         'width' => 400,
@@ -10,9 +10,10 @@ add_action('after_setup_theme', function() {
         'title' => 'site-description'
     ]);
 
-
     add_theme_support('custom-header');
-    add_theme_support( 'hybrid-core-template-hierarchy' );
+
+
+    add_theme_support( 'hybrid-core-template-hierarchy');
     add_theme_support( 'loop-pagination' );
     add_theme_support( 'get-the-image' );   
     add_theme_support( 'post-thumbnails' );
@@ -27,6 +28,35 @@ add_action('after_setup_theme', function() {
     ]);
 });
 
+function jppj_customize_register ($wp_customize) {
+    $wp_customize->remove_section("colors");
+    $wp_customize->add_setting('jppj_primary_color', array(
+        'default' => '#F25D50',
+        'transport' => 'refresh'
+    ));
+    $wp_customize->add_section('jppj_theme_colors', array(
+        'title' => __('Couleurs', 'jppj-theme'),
+        'priority' => '30'
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control( $wp_customize, 'jppj_primary_color_control', array(
+        'label' => __('Couleur Primaire', 'jppj-chorale'),
+        'section' => 'jppj_theme_colors',
+        'settings' => 'jppj_primary_color'
+    )));
+}
+
+add_action('customize_register', 'jppj_customize_register');
+// Ouput Customize CSS
+function jppj_customize_css(){ 
+    ?>
+    <style type="text/css">
+        .home #agenda {
+            background-color: <?php echo get_theme_mod('jppj_primary_color'); ?>
+        }
+    </style>
+<?php 
+}
+add_action('wp_head', 'jppj_customize_css');
 
 
 add_action('wp_enqueue_scripts', function(){

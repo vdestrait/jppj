@@ -34,18 +34,19 @@
                         'order' => 'DESC' );
                         $loop = new WP_Query( $args );
                     if ( $loop->have_posts() ):
+                        $i=0;
                         while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                            <div class="pointer" data-toggle="modal" data-target="#modalCenter">
+                            <div class="pointer" data-toggle="modal" data-target="#modal-<?php echo $i; ?>">
                                 <span class="date"><?php the_field('date_time'); ?></span>
                                 <h3><?php the_title(); ?></h3>
                             </div>
                            
-                            <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
+                            <div class="modal fade" id="modal-<?php echo $i; ?>" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
                               <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
 
                                   <div class="modal-header">
-                                    <h4 class="modal-title" id="modalCenterTitle"><?php the_title(); ?></h4>
+                                    <h4 class="modal-title-<?php echo $i; ?>" id="modalCenterTitle"><?php the_title(); ?></h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                       <span aria-hidden="true"><img class="close-icon" src="<?php bloginfo('template_url');?>/assets/img/close.png"></span>
                                     </button>
@@ -66,6 +67,7 @@
                               </div>
                             </div>
                         <?php 
+                        $i++;
                     endwhile;
                     endif;  
                     wp_reset_query();?>
@@ -142,8 +144,10 @@
         <h2><?php the_field('history_title'); ?></h2>
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <div class="bcg-img" style="background-image: url('<?php the_field('history_image'); ?>');">
+                <div class="col-md-6 mb-4">
+                    <div class="bcg-wrap">
+                        <div class="bcg-img" style="background-image: url('<?php the_field('history_image'); ?>');">
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">

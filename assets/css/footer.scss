@@ -48,5 +48,10 @@ footer {
     .copy {
     	font-family: 'Open Sans', sans-serif;
     }
-    
+    #menu-footer {
+        a {
+            padding: .75rem;
+            display: block;
+        }
+    }
 } 
