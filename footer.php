@@ -3,11 +3,11 @@
         <div class=" container">
             <h3>Contact</h3>
             <div class="row">
-                <div class="col-xs-12 col-md-6">
+                <div class="col-xs-12 col-md-6 order-2 order-md-1">
                     <h4>Ecrivez-nous !</h4>
                     <?php dynamic_sidebar( 'footer_sidebar' ); ?>
                 </div>
-                <div class="col col-xs-12">
+                <div class="col col-xs-12 order-1 order-md-2">
                     <div class="socials">
                         <a href="https://www.facebook.com/jppjchorale" target="_blank" data-toggle="tooltip" data-placement="top" title="Suivez-nous sur Facebook !">
                             <img src="<?php bloginfo('template_url');?>/assets/img/filled-facebook.svg">
@@ -18,7 +18,7 @@
                         </a>
                        
                     </div>
-                    <div class="footer-menu-wrap">
+                    <div class="footer-menu-wrap d-none d-md-block">
                         <?php wp_nav_menu([
                             'theme_location' => 'primary_menu',
                             'menu_id' => 'menu-footer'

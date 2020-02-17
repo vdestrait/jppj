@@ -15,12 +15,19 @@
     <?php wp_head() ?>
 </head>
 <body <?php body_class(); ?>>
-        <nav>
-            <img id="brand-logo" src="<?php bloginfo('template_url');?>/assets/img/jppj-logo-black.svg">
-            <?php wp_nav_menu([
-                'theme_location' => 'primary_menu',
-                'menu_id' => 'menu-main'
-            ]) ?>
+        <nav class="navbar navbar-expand-lg">
+            <a href="<?php get_home_url();?>">
+                <img id="brand-logo" src="<?php bloginfo('template_url');?>/assets/img/jppj-logo-black.svg">
+            </a>
+            <div class="collapse navbar-collapse" id="navbar">
+                <?php wp_nav_menu([
+                    'theme_location' => 'primary_menu',
+                    'menu_id' => 'menu-main'
+                ]) ?>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <img id="burger-menu" src="<?php bloginfo('template_url');?>/assets/img/white-menu.svg"/>
+            </button>
         </nav>
 
         <header style="color: #<?php echo get_header_textcolor() ?>;background-image: url('<?php echo get_header_image() ?>')">
@@ -28,7 +35,7 @@
                 <div class="site-title">
                     <?php the_custom_logo(); ?>
                 </div>
-                <img class="arrow-down" src="<?php bloginfo('template_url');?>/assets/img/expand-arrow.png" alt="">
+                <img class="arrow-down" src="<?php bloginfo('template_url');?>/assets/img/white-expand-arrow.png" alt="">
                 <figure class="video">
                     <video controls src="<?php the_field('video'); ?>"></video>
                     <img class="close-video" src="<?php bloginfo('template_url');?>/assets/img/close.png">

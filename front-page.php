@@ -79,7 +79,7 @@
 
             <?php
             if( have_rows('concerts_cards') ):?>
-                <div class="row concerts-cards">
+                <div class="row no-gutters concerts-cards">
                
                 <?php
                 $count = count(get_field('concerts_cards'));
@@ -92,6 +92,7 @@
                          <div class="icon-wrap">
                             <img src="<?php the_sub_field('icon');?>">
                             <h4 class="thin"><?php the_sub_field('title');?></h4> 
+                            <div class="arrow-down arrow-expanding d-md-none" alt=""></div>
                         </div>
 
                         <div class="card">

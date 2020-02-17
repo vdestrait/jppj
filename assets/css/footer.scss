@@ -10,6 +10,10 @@ footer {
     	font-family: 'code_lightregular','Open Sans', "Lucida Sans Unicode", serif;
     	letter-spacing: 1.5px;
     }
+    .evf-field {
+        max-width: 90%;
+        margin: 0 auto;
+    }
     .button.evf-submit {
     	color: white;
     	background-color: $dark-grey;
@@ -31,7 +35,7 @@ footer {
     .socials {
         display: flex;
         align-items: center;
-        flex-direction: column;
+        justify-content: center;
     	a {
             padding: 1rem; 
             img {
@@ -52,6 +56,14 @@ footer {
         a {
             padding: .75rem;
             display: block;
+        }
+    }
+    @include md-up {
+        .evf-field {
+            max-width: 100%;
+        }
+        .socials {
+            flex-direction: column;
         }
     }
 } 
