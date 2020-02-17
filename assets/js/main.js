@@ -33,17 +33,13 @@ $(document).ready(function() {
 	let windowWidth= $(window).width();
 	if(windowWidth < 768){
 		$('.icon-wrap').on('click', function() {
-			$(this).find('.arrow-expanding').toggleClass('expanded');
 			if($(this).find('.arrow-expanding').hasClass('expanded')) {
 				$(this).next().slideUp();
 			} else {
-				$(this).next().slideDown();s
+				$(this).next().slideDown();
 			}
+			$(this).find('.arrow-expanding').toggleClass('expanded');
 		});
-		// $('.expanded').on('click', function(){
-		// 	$(this).parent().next().slideUp();
-		// 	$(this).removeClass('expanded');
-		// });
 	}
 	$(".icon-wrap").hover(
 		function(){$(this).next().fadeIn('fast');},

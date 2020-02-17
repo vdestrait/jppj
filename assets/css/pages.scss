@@ -144,12 +144,14 @@ FRONT-PAGE
         padding: 2rem;
     }
     @include md-up {
-        padding: 2rem 3rem;
+        section {
+            padding: 2rem;
+        }
     }
     #agenda {
         color: white;
         background-color: $primary;
-        padding: 3rem;
+        padding: 2rem 3rem;
         .concert-dates {
             margin-bottom: 2rem;
             .date {
@@ -243,6 +245,7 @@ FRONT-PAGE
                         padding-top: 66.66%;
                     }
                     h4 {
+                        display: block;
                         margin: 0 0 .5rem 0;
                     }
                 }
