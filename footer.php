@@ -7,7 +7,7 @@
                     <h4>Ecrivez-nous !</h4>
                     <?php dynamic_sidebar( 'footer_sidebar' ); ?>
                 </div>
-                <div class="col col-xs-12 order-1 order-md-2">
+                <div class="col-xs-12 col-md-6 order-1 order-md-2">
                     <div class="socials">
                         <a href="https://www.facebook.com/jppjchorale" target="_blank" data-toggle="tooltip" data-placement="top" title="Suivez-nous sur Facebook !">
                             <img src="<?php bloginfo('template_url');?>/assets/img/filled-facebook.svg">
