@@ -22,15 +22,6 @@ function menuColors() {
 	} else {
 		$('nav').removeClass("menu-primary");
 	}
-	
-	// const history = document.getElementById("history");
-	// const historyBounding = history.getBoundingClientRect();
-	// if (historyBounding.top < 50 && historyBounding.bottom > 0) {
-	// 	$('nav').addClass("menu-primary");
-	// 	console.log();
-	// } else {
-	// 	$('nav').removeClass("menu-primary");
-	// }
 
 	const concert = document.getElementById("concert");
 	const concertBounding = concert.getBoundingClientRect();
@@ -39,6 +30,15 @@ function menuColors() {
 		console.log();
 	} else {
 		$('nav').removeClass("menu-secondary");
+	}
+
+	const history = document.getElementById("history");
+	const historyBounding = history.getBoundingClientRect();
+	if (historyBounding.top < 50 && historyBounding.bottom > 0) {
+		$('nav').addClass("menu-dark-grey");
+		console.log();
+	} else {
+		$('nav').removeClass("menu-dark-grey");
 	}
 }
   
