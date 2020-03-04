@@ -59,6 +59,15 @@ nav.navbar {
             }
         }
     }
+    &.menu-primary a {
+        color: $primary;
+    }
+    &.menu-secondary a {
+        color: $secondary;
+    }
+    &.menu-dark-grey a {
+        color: $dark-grey;
+    }
 }
 
 
