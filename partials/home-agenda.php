@@ -41,14 +41,23 @@
                             <?php the_post_thumbnail(); ?>
 
                             <div class="modal-body">
+                            <?php the_field('date_time'); ?>
                             <?php the_field('text'); ?>
                             </div>
 
-                            <div class="modal-footer">
-                            <?php if(get_field('reservation')): ?>
-                                <a href="<?php the_field('reservation'); ?>" target="_blank">R&eacute;servations<img class="link-icon" src="<?php bloginfo('template_url');?>/assets/img/external-link.svg"></a>
+                            <?php if(get_field('location')): ?>
+                                <div class="modal-footer">
+                                    <h5>Adresse :</h5><br>
+                                    <br><p><?php the_field('location'); ?></p>
+                                </div>
                             <?php endif; ?>
-                            </div>
+                            
+                            <?php if(get_field('reservation')): ?>
+                                <div class="modal-footer">
+                                    <a href="<?php the_field('reservation'); ?>" target="_blank">R&eacute;servations<img class="link-icon" src="<?php bloginfo('template_url');?>/assets/img/external-link.svg"></a>
+                                </div>
+                            <?php endif; ?>
+                            
                         </div>
                         </div>
                     </div>

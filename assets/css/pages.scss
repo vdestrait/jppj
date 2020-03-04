@@ -3,7 +3,187 @@ html {
 }
 
 body {
-    overflow:auto;
+  overflow: auto;
+}
+.close-icon {
+  width: 30px;
+}
+.link-icon {
+  width: 20px;
+  margin-left: 10px;
+  margin-top: -8px;
+  &:hover {
+    filter: invert(20%) sepia(99%) saturate(1904%) hue-rotate(199deg)
+      brightness(96%) contrast(101%);
+  }
+}
+.music-icon {
+  width: 80px;
+  height: auto;
+}
+.pointer {
+  cursor: pointer;
+}
+
+.bcg-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.bcg-wrap {
+  height: 100%;
+  overflow: hidden;
+  min-height: 165px;
+  margin-bottom: 2rem;
+}
+
+.bcg-wrap:hover .bcg-img {
+  transform: scale(1.2);
+}
+
+section {
+  padding: 2rem;
+}
+@include md-up {
+  section {
+    padding: 2rem;
+  }
+}
+
+/**********
+FRONT-PAGE
+**********/
+
+.home {
+  #agenda {
+    color: white;
+    background-color: $primary;
+    padding: 2rem 3rem;
+    overflow: auto;
+    .concert-dates {
+      margin-bottom: 2rem;
+      .date {
+        color: black;
+        font-size: 1.5rem;
+        font-family: "code_boldregular", "Open Sans", "Lucida Sans Unicode",
+          serif;
+      }
+      h3 {
+        margin-top: 0;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .modal-content {
+        border: none;
+        border-radius: 0;
+        color: black;
+        h4 {
+          margin: 0;
+        }
+        img.attachment-post-thumbnail {
+          width: 100%;
+          height: auto;
+          max-height: 180px;
+          object-fit: cover;
+        }
+        .modal-footer {
+          justify-content: flex-start;
+          a {
+            font-size: 1.5rem;
+            font-family: $title-fat-font;
+          }
+          h5,
+          p {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+  #concert {
+    .concerts-cards {
+      text-align: center;
+      margin: 2rem 0;
+      & > div {
+        margin-bottom: 1rem;
+      }
+      .icon-wrap {
+        padding: 2rem 0;
+        cursor: pointer;
+      }
+      .arrow-down {
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+        background-image: url(../../img/expand-arrow.png);
+        background-position: center;
+        background-size: cover;
+        &.expanded {
+          background-image: url(../../img/collapse-arrow.png);
+        }
+      }
+      .card {
+        display: none;
+        position: relative;
+        border-radius: 0;
+        border: none;
+        color: white;
+        background-color: $dark-grey;
+        text-align: left;
+        .bcg-img {
+          height: 180px;
+        }
+        h4 {
+          display: none;
+        }
+      }
+    }
+    @include md-up {
+      .concerts-cards {
+        margin: 4rem 0;
+        & > div {
+          margin-bottom: 0;
+        }
+        .card {
+          display: none;
+          position: absolute;
+          top: -45px;
+          border-radius: 0;
+          border: none;
+          margin: -2rem 2rem 2rem 2rem;
+          color: white;
+          background-color: $dark-grey;
+          .bcg-img {
+            padding-top: 66.66%;
+          }
+          h4 {
+            display: block;
+            margin: 0 0 0.5rem 0;
+          }
+        }
+      }
+    }
+  }
+  #listening {
+    color: white;
+    background-color: $secondary;
+    .sounds {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 3rem;
+    }
+  }
+  #history {
+    .row {
+      margin-bottom: 2rem;
+    }
+  }
 }
 
 /**********
@@ -11,285 +191,17 @@ body {
 **********/
 
 .error404 {
-    text-align: center;
-    header {
-        height: 30vh;
+  text-align: center;
+  .content-404 {
+    margin-bottom: 5rem;
+    span {
+      font-size: 6rem;
     }
-    .content-404 {
-        margin-bottom :5rem;
-        span {
-            font-size: 10rem;
-        }
-        p {
-            font-size: 2rem;
-            a {
-                text-decoration: underline;
-            }
-        }
+    p {
+      font-size: 2rem;
+      a {
+        text-decoration: underline;
+      }
     }
-}
-
-/**********
-FRONT-PAGE
-**********/
-.opacity-layer {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(255,255,255,.25);
-    display: none;
-}
-.video-player {
-    position: absolute;
-    bottom: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    cursor: pointer;
-    img {
-        height: 60px;
-        width: auto;
-    }
-}
-.video {
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 0;
-    z-index:100;
-    display: none;
-}
-.close-icon {
-    width: 30px;
-}
-.link-icon {
-    width: 20px;
-    margin-left: 10px;
-    margin-top: -8px;
-    &:hover {
-    filter: invert(20%) sepia(99%) saturate(1904%) hue-rotate(199deg) brightness(96%) contrast(101%);
-
-    }
-}
-.music-icon {
-    width: 80px;
-    height: auto;
-}
-.pointer {
-    cursor: pointer;
-}
-.home {
-    header {
-        height: 100vh;
-        background-position: center center;
-        background-size: cover;
-        position: relative;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .site-title {
-            position: relative;
-            text-align: center;
-            .custom-logo {
-                max-height: 250px;
-                width: auto;
-            }
-        }
-        .arrow-down {
-            width: 40px;
-            position: absolute;
-            bottom: 7.5%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        video:after {
-            content:"hi";
-            background-color: blue;
-            background-image: url(../../../assets/img/close.png);
-            background-size: 50px;
-            width: 50px;
-            height: 50px;
-            position: absolute;
-            top: -20px;
-            left: 200px;
-        }
-        figure {
-            width: 400px;
-            video {
-                width: 100%;
-            }
-            img {
-                position: absolute;
-                top: 0;
-                right: -40px;
-                height: 30px;
-                width: auto;
-                cursor: pointer;
-            }
-        }
-        @include md-up {
-            .site-title {
-                position: absolute;
-                top: 50%;
-                left: 10%;
-                transform: translateX(-50%);
-                transform: translateY(-50%);
-                .custom-logo {
-                    max-height: 400px;
-                    width: auto;
-                }
-            }
-        }
-    }
-    section {
-        padding: 2rem;
-    }
-    @include md-up {
-        section {
-            padding: 2rem;
-        }
-    }
-    #agenda {
-        color: white;
-        background-color: $primary;
-        padding: 2rem 3rem;
-        overflow: auto;
-        .concert-dates {
-            margin-bottom: 2rem;
-            .date {
-                color: black;
-                font-size: 1.5rem;
-                font-family: 'code_boldregular','Open Sans', "Lucida Sans Unicode", serif;
-            }
-            h3 {
-                margin-top: 0;
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-            .modal-content {
-                border: none;
-                border-radius: 0;
-                color: black;
-                h4 {
-                    margin: 0;
-                }
-                img.attachment-post-thumbnail {
-                    width: 100%;
-                    height: auto;
-                    max-height: 180px;
-                    object-fit: cover;
-                }
-                .modal-footer {
-                    justify-content: flex-start;
-                    a {
-                        font-size: 1.5rem;
-                        font-family: $title-fat-font;
-                    }
-                }
-            }
-        }
-    }
-    #concert {
-        .concerts-cards {
-            text-align: center;
-            margin: 2rem 0;
-            &>div {
-                margin-bottom: 1rem;
-            }
-            .icon-wrap {
-                padding: 2rem 0;
-                cursor: pointer;
-            }
-            .arrow-down {
-                width: 40px;
-                height: 40px;
-                margin: 0 auto;
-                background-image: url(../../img/expand-arrow.png);
-                background-position: center;
-                background-size: cover;
-                &.expanded {
-                    background-image: url(../../img/collapse-arrow.png);
-                }
-            }
-            .card {
-                display: none;
-                position: relative;
-                border-radius: 0;
-                border: none;
-                color: white;
-                background-color: $dark-grey;
-                text-align: left;
-                .bcg-img {
-                    height: 180px;
-                }
-                h4 {
-                    display: none;
-                }
-            }
-        }   
-        @include md-up {
-            .concerts-cards {
-                margin: 4rem 0;
-                &>div {
-                    margin-bottom: 0;
-                }
-                .card {
-                    display: none;
-                    position: absolute;
-                    top: -45px;
-                    border-radius: 0;
-                    border: none;
-                    margin: -2rem 2rem 2rem 2rem;
-                    color: white;
-                    background-color: $dark-grey;
-                    .bcg-img {
-                        padding-top: 66.66%;
-                    }
-                    h4 {
-                        display: block;
-                        margin: 0 0 .5rem 0;
-                    }
-                }
-            }
-        }
-    }
-    #listening {
-        color: white;
-        background-color: $secondary;
-        .sounds {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            margin-bottom: 3rem;
-        }
-    }
-    #history {
-        .row {
-            margin-bottom: 2rem;
-        }
-    }
-}
-
-.bcg-img {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    transition: all .2s ease-in-out;
-}
-
-.bcg-wrap {
-    height: 100%;
-    overflow: hidden;
-    min-height: 165px;
-    margin-bottom: 2rem;
-}
-
-.bcg-wrap:hover .bcg-img {
-    transform: scale(1.2);
+  }
 }

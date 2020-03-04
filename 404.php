@@ -2,7 +2,7 @@
 
 <div class="content-404 container">
     <span>ERREUR 404</span>
-    <h1>Zut, flûte et re-flûte !! C'est cassé...</h1>
+    <h1>Zut, flûte et re-flûte !! <br>C'est cassé...</h1>
     <p><a href="<?php echo home_url(); ?>">Retour à la page d'accueil</a></p>
 </div>
 

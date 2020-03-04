@@ -23,8 +23,7 @@ add_action('after_setup_theme', function() {
 
     // Menus
     register_nav_menus([
-        "primary_menu" => "Primary",
-        "socials_links_menu" => "Socials Links"
+        "primary_menu" => "Primary"
     ]);
 });
 
