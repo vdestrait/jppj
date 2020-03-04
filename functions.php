@@ -132,14 +132,28 @@ function register_cpt_concert() {
     );
 
     register_post_type( 'concert', $args );
+
 }
 
-add_action('acf/render_field/name=field_name', 'my_acf_dynamic_message');
-function my_acf_dynamic_message(){
-    
-    echo 'Hello World';
-    
+/**
+ * Add REST API support to an already registered post type.
+ */
+add_filter( 'register_post_type_args', 'my_post_type_args', 10, 2 );
+
+function my_post_type_args( $args, $post_type ) {
+
+    if ( 'concert' === $post_type ) {
+        $args['show_in_rest'] = true;
+
+        // Optionally customize the rest_base or rest_controller_class
+        $args['rest_base']             = 'concerts';
+        $args['rest_controller_class'] = 'WP_REST_Posts_Controller';
+    }
+
+    return $args;
 }
+
+
 
 
 

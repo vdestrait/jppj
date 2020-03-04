@@ -2,6 +2,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+    overflow:auto;
+}
+
 /**********
 404
 **********/
@@ -152,6 +156,7 @@ FRONT-PAGE
         color: white;
         background-color: $primary;
         padding: 2rem 3rem;
+        overflow: auto;
         .concert-dates {
             margin-bottom: 2rem;
             .date {
