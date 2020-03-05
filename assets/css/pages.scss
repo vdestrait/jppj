@@ -5,22 +5,7 @@ html {
 body {
   overflow: auto;
 }
-.close-icon {
-  width: 30px;
-}
-.link-icon {
-  width: 20px;
-  margin-left: 10px;
-  margin-top: -8px;
-  &:hover {
-    filter: invert(20%) sepia(99%) saturate(1904%) hue-rotate(199deg)
-      brightness(96%) contrast(101%);
-  }
-}
-.music-icon {
-  width: 80px;
-  height: auto;
-}
+
 .pointer {
   cursor: pointer;
 }

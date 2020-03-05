@@ -8,7 +8,7 @@
                 echo '<div class="row">';
                     while(have_posts()){
                         the_post();
-                        get_template_part('template-parts/post/content');
+                        //get_template_part('template-parts/post/content');
                     }
                 echo '</div>';
             }        

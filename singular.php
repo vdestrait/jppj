@@ -8,40 +8,45 @@
  */
     get_header(); ?>
         <div class="container">
-
-            <div class="row">
             
-                <div class="col-sm-10 col-sm-offset-1">
+            <?php if ( have_posts() ) : ?>
 
-                    <?php if ( have_posts() ) : ?>
+                <?php while ( have_posts() ) : the_post(); ?>
 
-                        <?php while ( have_posts() ) : the_post(); ?>
+                    <h1><?php the_title();?></h1>
 
-                            <div>
+                    <div class="row mb-3">
 
-                                <h1><?php the_title();?></h1>
+                        <div class="col-md-6 concert-thumbnail">
+                            <?php the_post_thumbnail(); ?>
+                        </div>
 
-                                <?php the_content();?>
-                                
-                            </div>
+                        <div class="col-md-6 d-flex flex-column justify-content-center">
+                            <h5><?php the_field('date_time'); ?></h5>
+                            <?php if(get_field('location')): ?>
+                                <h5>Adresse :</h5>
+                                <p><?php the_field('location'); ?></p>
+                            <?php endif; ?>
+                            <?php if(get_field('reservation')): ?>
+                                <a href="<?php the_field('reservation'); ?>" target="_blank">R&eacute;servations<img class="link-icon" src="<?php bloginfo('template_url');?>/assets/img/external-link.svg"></a>
+                            <?php endif; ?>
+                        </div>
 
-                            
-                        <?php endwhile; ?>
+                        <div class="col-sm-12 mt-5 mb-5">
+                            <?php the_field('text'); ?>
+                            <a class="back-blog" href="<?php bloginfo('url');?>">
+                            <img class="back-icon" src="<?php bloginfo('template_url');?>/assets/img/left-secondary.png"> Retour à l'accueil</a>
+                        </div>
 
+                    </div> <!-- /row -->
 
-                        <a class="back-blog" href="<?php bloginfo('template_url');?>">&#8249;&#8249; Retour à l'accueil</a>
+                <?php endwhile; ?>
 
+            <?php else : ?>
 
-                    <?php else : ?>
+                <?php //get_template_part( 'loop/loop-error' ); ?>
 
-                        Blabla
+            <?php endif; ?>
 
-                        <?php //get_template_part( 'loop/loop-error' ); ?>
-
-                    <?php endif; ?>
-
-                </div> <!--/col-->
-
-            </div> <!-- /row -->
         </div> <!-- /container -->
 <?php get_footer(); ?>

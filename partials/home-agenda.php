@@ -41,14 +41,14 @@
                             <?php the_post_thumbnail(); ?>
 
                             <div class="modal-body">
-                            <?php the_field('date_time'); ?>
+                            <h5><?php the_field('date_time'); ?></h5>
                             <?php the_field('text'); ?>
                             </div>
 
                             <?php if(get_field('location')): ?>
                                 <div class="modal-footer">
-                                    <h5>Adresse :</h5><br>
-                                    <br><p><?php the_field('location'); ?></p>
+                                    <h5>Adresse :</h5>
+                                    <p><?php the_field('location'); ?></p>
                                 </div>
                             <?php endif; ?>
                             
