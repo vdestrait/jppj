@@ -17,7 +17,7 @@
 
                     <div class="row mb-3">
 
-                        <div class="col-md-6 concert-thumbnail">
+                        <div class="col-md-6 post-thumbnail">
                             <?php the_post_thumbnail(); ?>
                         </div>
 

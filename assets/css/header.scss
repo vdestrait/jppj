@@ -1,50 +1,24 @@
 header {
-  height: 100vh;
-  background-position: center center;
+  height: 35vh;
+  background-position-y: 30%;
   background-size: cover;
   position: relative;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  .video-player {
+    display: none;
+  }
+  .arrow-down {
+    display: none;
+  }
   .site-title {
     position: relative;
     text-align: center;
     .custom-logo {
-      max-height: 250px;
+      max-height: 20vh;
       width: auto;
-    }
-  }
-  .arrow-down {
-    width: 40px;
-    position: absolute;
-    bottom: 7.5%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  video:after {
-    content: "hi";
-    background-color: blue;
-    background-image: url(../../../assets/img/close.png);
-    background-size: 50px;
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    top: -20px;
-    left: 200px;
-  }
-  figure {
-    width: 400px;
-    video {
-      width: 100%;
-    }
-    img {
-      position: absolute;
-      top: 0;
-      right: -40px;
-      height: 30px;
-      width: auto;
-      cursor: pointer;
     }
   }
   .opacity-layer {
@@ -56,26 +30,6 @@ header {
     background-color: rgba(255, 255, 255, 0.25);
     display: none;
   }
-  .video-player {
-    position: absolute;
-    bottom: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    cursor: pointer;
-    img {
-      height: 60px;
-      width: auto;
-    }
-  }
-  .video {
-    position: absolute;
-    bottom: 15%;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 0;
-    z-index: 100;
-    display: none;
-  }
   @include md-up {
     .site-title {
       position: absolute;
@@ -83,27 +37,75 @@ header {
       left: 10%;
       transform: translateX(-50%);
       transform: translateY(-50%);
-      .custom-logo {
-        max-height: 400px;
-        width: auto;
-      }
     }
   }
 }
 
-.error404,
-.single {
+.home {
   header {
-    height: 35vh;
-    background-position-y: 30%;
-    .site-title .custom-logo {
-      max-height: 20vh;
+    height: 100vh;
+    background-position: center center;
+    .arrow-down {
+      display: block;
+      width: 40px;
+      position: absolute;
+      bottom: 7.5%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .site-title {
+      position: relative;
+      text-align: center;
+      .custom-logo {
+        max-height: 250px;
+        width: auto;
+      }
     }
     .video-player {
-      display: none;
+      display: block;
+      position: absolute;
+      bottom: 20%;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: pointer;
+      img {
+        height: 60px;
+        width: auto;
+      }
     }
-    .arrow-down {
+    figure.video {
+      width: 400px;
+      position: absolute;
+      bottom: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 0;
+      z-index: 100;
       display: none;
+      video {
+        width: 100%;
+      }
+      img {
+        position: absolute;
+        top: 0;
+        right: -40px;
+        height: 30px;
+        width: auto;
+        cursor: pointer;
+      }
+    }
+    @include md-up {
+      .site-title {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translateX(-50%);
+        transform: translateY(-50%);
+        .custom-logo {
+          max-height: 400px;
+          width: auto;
+        }
+      }
     }
   }
 }
