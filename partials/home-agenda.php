@@ -18,7 +18,7 @@
                 'orderby' => 'meta_value_num',
                 'posts_per_page' => -1,
                 'order' => 'DESC' );
-                $loop = new WP_Query( $args );
+        $loop = new WP_Query( $args );
             if ( $loop->have_posts() ):
                 $i=0;
                 while ( $loop->have_posts() ) : $loop->the_post(); ?>

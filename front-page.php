@@ -20,7 +20,6 @@
     </section>
 
     <section id="concert">
-        
         <div class="container">
 
             <?php get_template_part('partials/home-concert-cards','null'); ?>

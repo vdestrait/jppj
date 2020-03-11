@@ -25,7 +25,21 @@ add_action('after_setup_theme', function() {
     register_nav_menus([
         "primary_menu" => "Primary"
     ]);
+    
 });
+
+function get_my_menu() {
+    // Replace your menu name, slug or ID carefully
+    return wp_get_nav_menu_items('Main Menu');
+}
+
+add_action( 'rest_api_init', function () {
+    register_rest_route( 'wp/v2', 'menu', array(
+        'methods' => 'GET',
+        'callback' => 'get_my_menu',
+        'show_in_rest' => 'true'
+    ) );
+} );
 
 function jppj_customize_register ($wp_customize) {
     $wp_customize->remove_section("colors");

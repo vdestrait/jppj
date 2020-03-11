@@ -10,7 +10,7 @@ if( have_rows('concerts_cards') ):?>
         <div class="col-xs-12 
                     <?php echo ($count === 4) ?  'col-md-6' : 'col-md-4' ;?> 
                     col-lg-4">
-                <div class="icon-wrap">
+            <div class="icon-wrap">
                 <img src="<?php the_sub_field('icon');?>">
                 <h4 class="thin"><?php the_sub_field('title');?></h4> 
                 <div class="arrow-down arrow-expanding d-md-none" alt=""></div>
