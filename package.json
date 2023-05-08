@@ -18,7 +18,7 @@
   "homepage": "https://github.com/ahmadawais/WPSass#readme",
   "devDependencies": {
     "node-sass": "^7.0.0",
-    "nodemon": "^1.11.0"
+    "nodemon": "^2.0.22"
   },
   "dependencies": {
     "animate.css": "^3.7.2"
